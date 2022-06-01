@@ -28,11 +28,10 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-    var nuevoArray;
       for(var i = 0; i < array.length; i++) {
-        nuevoArray[i] = array[i] + 1
-      }
-        return nuevoArray
+        array[i] += 1
+      };
+        return array;
 }
 
 
@@ -40,7 +39,7 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:
-    array[array.length] = 'elemento';
+    array.push(elemento);
     return array;
 }
 
@@ -50,7 +49,8 @@ function agregarItemAlComienzoDelArray(array, elemento) {
   // y devuelve el array
   // Pista: usa el método `.unshift`
   // Tu código:
-  array.unshift('elemento');
+  
+  array.unshift(elemento);
   return array;
 }
 
@@ -84,8 +84,8 @@ function agregarNumeros(numeros) {
   // Suma todos los enteros y devuelve el valor
   // Tu código:
   var suma = 0; 
-    for ( var i = 0; i > numeros.length; i++) {
-      suma= suma + numeros[i];
+    for ( var i = 0; i < numeros.length; i++) {
+      suma += numeros[i];
     }
         return suma;
 }
@@ -149,7 +149,7 @@ function diaDeLaSemana(numeroDeDia) {
    if (numeroDeDia === 1 || numeroDeDia === 7) {
      return 'Es fin de semana'
    } 
-     return 'Es día laboral'
+     return 'Es dia Laboral'
    
 } 
 
@@ -158,10 +158,11 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-    if(n[0] === 9) {
+    if(String(n)[0] === '9') {
       return true;
-    } 
-    return false;
+    } else {
+      return false;
+    }
 }
 
 
@@ -170,10 +171,10 @@ function todosIguales(arreglo) {
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
     for (var i = 0; i < arreglo.length; i++)
-      if (arreglo[i] !== arreglo[i+1]) {
-        return false;
+      if (arreglo[i] === arreglo[i+1]) {
+        return true;
       }
-      return true;
+      return false;
 } 
 
 
@@ -183,17 +184,18 @@ function mesesDelAño(array) {
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
     var nuevoArray = [];
-      for(var i = 0; i < array.length; i++) {
-        if (array[i] === 'Enero' || array[i] === 'Marzo' || array[i] === 'Noviembre') {
+      for(i = 0; i < array.length; i++) {
+        if(array[i] === 'Enero' || array[i] === 'Marzo' || array[i] === 'Noviembre') {
           nuevoArray.push(array[i]);
         }
-      } 
-        if (nuevoArray.length < 3) {
-          return 'No se encontraron los meses perdidos';
+      }
+      if(nuevoArray.length === 3) {
+          return nuevoArray;
+        } else {
+          return 'No se encontraron los meses pedidos'
         }
-        return nuevoArray;
 
-}
+      }
 
 
 function mayorACien(array) {
@@ -229,7 +231,7 @@ function breakStatement(numero) {
 
   }
     if(i < 10) {
-      return 'Se interrumpio la ejecución';
+      return 'Se interrumpió la ejecución';
     } else {
       return array;
     }
