@@ -17,10 +17,10 @@ function crearUsuario() {
     this.email = opciones.email;
     this.password = opciones.password;
   }
-    Usuario.prototype.saludar = function () {
-          return 'Hola, mi nombre es' + this.nombre;
-    }
-    return Usuario;
+  Usuario.prototype.saludar = function () {
+    return 'Hola, mi nombre es ' + this.nombre;
+  }
+  return Usuario;
 }
 
 function agregarMetodoPrototype(Constructor) {
@@ -40,14 +40,14 @@ function agregarStringInvertida() {
   // Pista: Necesitarás usar "this" dentro de "reverse"
 
   String.prototype.reverse = function () {
-    var stringinvertida = '';
-      for(i = string.length -1 ; i > 0; i--) {
-        stringinvertida = stringinvertida + this.charAt(i)
-      }
+    var nuevaString = '';
+    for(i = this.length - 1; i >= 0; i--) {
+      nuevaString = nuevaString + this.charAt(i); 
+    }
+    return nuevaString;
   }
-    return stringinvertida;
+        
 }
-
 // ---------------------------------------------------------------------------//
   //Crea el constructor de la clase "Persona"
   //Debe tener las propiedades: "nombre", "apellido", "edad" y "domicilio"
@@ -62,11 +62,11 @@ function agregarStringInvertida() {
   class Persona {
     constructor(nombre, apellido, edad, domicilio) {
       // Crea el constructor:
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.edad = edad;
-        this.domicilio = domicilio;
-        detalle = function () {
+        this.nombre = nombre,
+        this.apellido = apellido,
+        this.edad = edad,
+        this.domicilio = domicilio,
+        this.detalle = function () {
           return {
             Nombre: this.nombre,
             Apellido: this.apellido,
@@ -82,7 +82,7 @@ function crearInstanciaPersona(nombre, apellido, edad, dir) {
   //Con esta función vamos a crear una nueva persona a partir de nuestro constructor de persona (creado en el ejercicio anterior)
   //Recibirá los valores "Juan", "Perez", 22, "Saavedra 123" para sus respectivas propiedades
   //Devolver la nueva persona creada
-    var nuevaPersona = new persona ('Juan', 'perez', 22, 'Saavedra 123')
+    var nuevaPersona = new Persona ('Juan', 'perez', 22, 'Saavedra 123')
       return nuevaPersona;
 }
   

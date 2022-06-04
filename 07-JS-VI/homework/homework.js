@@ -25,8 +25,8 @@ function sumarArray(numeros, cb) {
   // Pasa el resultado a `cb`
   // No es necesario devolver nada
   //Tu código:
-      var sumaTotal = numeros.reduce(function (acc, elemento) {
-        acc + elemento;
+      var sumaTotal = numeros.reduce(function (acc, curr) {
+       return acc + curr;
       }, 0)
             cb(sumaTotal);
 }
